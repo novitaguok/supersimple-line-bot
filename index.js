@@ -14,7 +14,7 @@ bot.on('message', function(event) {
       .then(function(data) {})
       .catch(function(error) {});
   } else {
-    var replyMsg = `What do you say just now? Oh, you say ${message.event.text}...`;
+    var replyMsg = `What do you say just now? Oh, you say '${event.message.text}'`;
     event
       .reply(replyMsg)
       .then(function(data) {})
