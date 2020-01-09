@@ -7,11 +7,13 @@ var bot = linebot({
 });
 
 bot.on('message', function(event) {
-  var replyMsg = `Hello, what do you chat just now: ${event.message.text}`;
-  event
-    .reply(replyMsg)
-    .then(function(data) {})
-    .catch(function(error) {});
+  if (event.message.text == 'Hi') {
+    var replyMsg = 'Hi too';
+    event
+      .reply(replyMsg)
+      .then(function(data) {})
+      .catch(function(error) {});
+  }
 });
 
 bot.listen('/linewebhook', 4000, function() {
