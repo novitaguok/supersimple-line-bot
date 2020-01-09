@@ -8,7 +8,13 @@ var bot = linebot({
 
 bot.on('message', function(event) {
   if (event.message.text == 'Hi') {
-    var replyMsg = 'Hi too';
+    var replyMsg = 'Hi too, how can I help you?';
+    event
+      .reply(replyMsg)
+      .then(function(data) {})
+      .catch(function(error) {});
+  } else {
+    var replyMsg = `What do you say just now? Oh, you say ${message.event.text}...`;
     event
       .reply(replyMsg)
       .then(function(data) {})
